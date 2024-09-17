@@ -1,18 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#404040">
 
-    <!-- Pantalla de la calculadora -->
-
-    <!-- Contenedor para los botones de números y operaciones -->
-
     <TextView
         android:id="@+id/display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="257dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/white"
         android:gravity="end"
@@ -21,20 +21,29 @@
         android:textColor="@android:color/black"
         android:textSize="48sp" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/button_C"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#009688"
+        android:text="C"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="410dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
         <GridLayout
             android:id="@+id/number_grid"
-            android:layout_width="0dp"
-            android:layout_height="429dp"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
             android:layout_weight="3"
             android:background="@android:color/darker_gray"
             android:columnCount="3"
-            android:padding="8dp"
+            android:padding="0dp"
             android:rowCount="4">
 
             <!-- Filas numéricas -->
@@ -45,6 +54,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#606060"
+                android:onClick="onButtonClick"
                 android:text="7"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
@@ -71,7 +81,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
-            <!-- Más números -->
             <Button
                 android:id="@+id/button_4"
                 android:layout_width="0dp"
@@ -176,56 +185,58 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/darker_gray"
             android:columnCount="1"
-            android:padding="8dp"
-            android:rowCount="5">
+            android:padding="0dp"
+            android:rowCount="1"
+            >
+
 
             <!-- Botones de operaciones -->
-            <Button
-                android:id="@+id/button_c"
-                android:layout_width="match_parent"
-                android:layout_height="83dp"
-                android:background="#009688"
-                android:text="C"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+
 
             <Button
                 android:id="@+id/button_divide"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:background="#009688"
                 android:text="/"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_rowWeight="2"
+                />
 
             <Button
                 android:id="@+id/button_multi"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:background="#009688"
                 android:text="×"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_rowWeight="2"
+                />
 
             <Button
                 android:id="@+id/button_menos"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:background="#009688"
                 android:text="-"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_rowWeight="2"
+                />
 
             <Button
                 android:id="@+id/button_mas"
                 android:layout_width="match_parent"
-                android:layout_height="83dp"
+                android:layout_height="wrap_content"
                 android:background="#009688"
                 android:text="+"
                 android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:layout_rowWeight="2"
+                />
         </GridLayout>
     </LinearLayout>
 </LinearLayout>
