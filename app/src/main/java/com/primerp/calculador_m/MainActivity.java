@@ -6,23 +6,30 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
-    @Override
+    @Override  //
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Enlazar el botón con su ID
-        Button myButton = findViewById(R.id.button_7);
-
+        Button myButton =(Button) findViewById(R.id.button_7);
         // Asignar un listener al botón para manejar el evento onClick
-        myButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Acción que se ejecutará cuando se presione el botón
-                Toast.makeText(MainActivity.this, "Botón presionado", Toast.LENGTH_SHORT).show();
-            }
-        });
+        myButton.setOnClickListener(this);
+    }
+
+    public void onButtonClick(View view) {
+
+    }
+    // encadenamiento boton , chein
+    // login imagen (lottie file) linias guias y contraint
+    // diseño tipica de aplicacion linias guia con 150dp contraintlayaut abajo tres botones con ecadenamiento uno con otro centrado con paqui y ariba con el titulo de la palicacion con linerleyaut anclado y otro linerleyaut
+
+    @Override
+    public void onClick(View view) {
+
+
+
     }
 }

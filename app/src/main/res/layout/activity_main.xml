@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#404040">
+    android:background="#404040"
+    tools:context=".MainActivity">
 
+    <!-- Display TextView -->
     <TextView
         android:id="@+id/display"
-        android:layout_width="match_parent"
-        android:layout_height="257dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="218dp"
         android:gravity="end"
         android:padding="16dp"
         android:text="0"
-        android:textColor="@android:color/black"
-        android:textSize="48sp" />
+        android:textColor="@android:color/white"
+        android:textSize="48sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Button C -->
     <Button
         android:id="@+id/button_C"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#009688"
-        android:text="C"
+        android:background="#8888"
+        android:text="@string/c"
         android:textColor="@android:color/white"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Number Buttons Grid -->
+
+    <!-- Operation Buttons -->
     <LinearLayout
+        android:id="@+id/button_layout"
         android:layout_width="match_parent"
-        android:layout_height="410dp"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:weightSum="4">
+        app:layout_constraintTop_toBottomOf="@id/button_C"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <GridLayout
             android:id="@+id/number_grid"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@android:color/darker_gray"
             android:columnCount="3"
             android:padding="0dp"
             android:rowCount="4">
@@ -53,9 +63,9 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
+                android:background="#0000"
                 android:onClick="onButtonClick"
-                android:text="7"
+                android:text="@string/_7"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -65,8 +75,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="8"
+                android:background="#0000"
+                android:text="@string/_8"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -76,8 +86,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="9"
+                android:background="#0000"
+                android:text="@string/_9"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -87,8 +97,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="4"
+                android:background="#0000"
+                android:text="@string/_4"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -98,8 +108,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="5"
+                android:background="#0000"
+                android:text="@string/_5"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -109,8 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="6"
+                android:background="#0000"
+                android:text="@string/_6"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -120,8 +130,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="1"
+                android:background="#0000"
+                android:text="@string/_1"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -131,8 +141,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="2"
+                android:background="#0000"
+                android:text="@string/_2"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -142,8 +152,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="3"
+                android:background="#0000"
+                android:text="@string/_3"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -153,8 +163,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text=","
+                android:background="#0000"
+                android:text="@string/punto"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -164,8 +174,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="0"
+                android:background="#0000"
+                android:text="@string/_0"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -175,8 +185,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:background="#606060"
-                android:text="="
+                android:background="#0000"
+                android:text="@string/igual"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
         </GridLayout>
@@ -187,8 +197,7 @@
             android:layout_weight="1"
             android:columnCount="1"
             android:padding="0dp"
-            android:rowCount="1"
-            >
+            android:rowCount="1">
 
 
             <!-- Botones de operaciones -->
@@ -198,45 +207,42 @@
                 android:id="@+id/button_divide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#009688"
-                android:text="/"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
                 android:layout_rowWeight="2"
-                />
+                android:background="#8888"
+                android:text="@string/dividir"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button_multi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#009688"
-                android:text="×"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
                 android:layout_rowWeight="2"
-                />
+                android:background="#8888"
+                android:text="@string/multiplicar"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button_menos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#009688"
-                android:text="-"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
                 android:layout_rowWeight="2"
-                />
+                android:background="#8888"
+                android:text="@string/restar"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/button_mas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#009688"
-                android:text="+"
-                android:textColor="@android:color/white"
-                android:textSize="24sp"
                 android:layout_rowWeight="2"
-                />
+                android:background="#8888"
+                android:text="@string/mas"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
         </GridLayout>
     </LinearLayout>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
