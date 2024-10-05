@@ -7,7 +7,8 @@
     android:background="#404040"
     tools:context=".MainActivity">
 
-    <!-- Display TextView -->
+
+    <!-- Pantalla de visualización -->
     <TextView
         android:id="@+id/display"
         android:layout_width="0dp"
@@ -21,22 +22,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Button C -->
+    <!-- Botón C (Borrar) -->
     <Button
         android:id="@+id/button_C"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8888"
-        android:text="@string/c"
+        android:text="C"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@id/display"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Number Buttons Grid -->
-
-    <!-- Operation Buttons -->
+    <!-- Layout de botones de números y operaciones -->
     <LinearLayout
         android:id="@+id/button_layout"
         android:layout_width="match_parent"
@@ -47,16 +46,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <!-- Grid de botones numéricos -->
         <GridLayout
             android:id="@+id/number_grid"
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:columnCount="3"
             android:padding="0dp"
             android:rowCount="4">
 
-            <!-- Filas numéricas -->
+            <!-- Fila 1 -->
             <Button
                 android:id="@+id/button_7"
                 android:layout_width="0dp"
@@ -64,8 +64,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:onClick="onButtonClick"
-                android:text="@string/_7"
+                android:text="7"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -76,7 +75,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_8"
+                android:text="8"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -87,10 +86,11 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_9"
+                android:text="9"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
+            <!-- Fila 2 -->
             <Button
                 android:id="@+id/button_4"
                 android:layout_width="0dp"
@@ -98,7 +98,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_4"
+                android:text="4"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -109,7 +109,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_5"
+                android:text="5"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -120,10 +120,11 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_6"
+                android:text="6"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
+            <!-- Fila 3 -->
             <Button
                 android:id="@+id/button_1"
                 android:layout_width="0dp"
@@ -131,7 +132,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_1"
+                android:text="1"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -142,7 +143,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_2"
+                android:text="2"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -153,10 +154,11 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_3"
+                android:text="3"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
+            <!-- Fila 4 -->
             <Button
                 android:id="@+id/button_coma"
                 android:layout_width="0dp"
@@ -164,7 +166,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/punto"
+                android:text="."
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -175,7 +177,7 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/_0"
+                android:text="0"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -186,11 +188,12 @@
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
                 android:background="#0000"
-                android:text="@string/igual"
+                android:text="="
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
         </GridLayout>
 
+        <!-- Grid de botones de operaciones -->
         <GridLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -199,17 +202,13 @@
             android:padding="0dp"
             android:rowCount="1">
 
-
-            <!-- Botones de operaciones -->
-
-
             <Button
                 android:id="@+id/button_divide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:background="#8888"
-                android:text="@string/dividir"
+                android:text="/"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -219,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:background="#8888"
-                android:text="@string/multiplicar"
+                android:text="*"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -229,7 +228,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:background="#8888"
-                android:text="@string/restar"
+                android:text="-"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
 
@@ -239,7 +238,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:background="#8888"
-                android:text="@string/mas"
+                android:text="+"
                 android:textColor="@android:color/white"
                 android:textSize="24sp" />
         </GridLayout>
